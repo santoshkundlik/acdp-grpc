@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_package = "com.acdp.grpc";
+
+//service
+
+service score {
+    rpc scoring(stream ScoreRequest) returns (stream ScoreResponse);
+   }
+
+message ScoreRequest {
+    int32 ballNumber = 1;
+    int32 runsScored = 2;
+}
+
+message ScoreResponse {
+    int32 runsToWin = 1;
+    int32 remainingBalls = 2;
+    double requiredRunRate = 3;
+}
