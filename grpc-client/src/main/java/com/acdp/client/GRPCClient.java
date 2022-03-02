@@ -25,7 +25,7 @@ public class GRPCClient {
         StreamObserver<Score.ScoreRequest> requestStreamObserver = clientStub.scoring(scoreResponseStreamObserver);
         scoreResponseStreamObserver.startGame(requestStreamObserver);
 
-        // just for testing
+        // just for testing as CountDownLatch can be implemented here.
         Thread.sleep(10000);
 
 
